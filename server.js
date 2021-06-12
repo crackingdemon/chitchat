@@ -1,10 +1,10 @@
 const express = require('express')
 const app = express()
-const http = require('http').createServer(app)
+const https = require('https').createServer(app)
 
 const PORT = process.env.PORT || 6969
 
-http.listen(PORT, () => {
+https.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
 })
 
