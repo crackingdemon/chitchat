@@ -1,12 +1,10 @@
 const express = require('express')
 const app = express()
-const https = require('https').createServer(app)
+const socketio = require('socket.io)
+const PORT = 3000;
+const expressServer = app.listen(PORT);
+const io = socketio(expressServer);
 
-const PORT = process.env.PORT || 6969
-
-https.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`)
-})
 
 app.use(express.static(__dirname + '/public'))
 
