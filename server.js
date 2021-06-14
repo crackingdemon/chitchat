@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const socketio = require('socket.io)
+const socketio = require('socket.io')
 const PORT = 3000;
 const expressServer = app.listen(PORT);
 const io = socketio(expressServer);
@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 })
 
 //code of socket to make connection 
-const io = require('socket.io')(http)
+
 
 io.on('connection', (socket) => {
     console.log('Connected')
