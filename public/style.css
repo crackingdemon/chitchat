@@ -9,64 +9,154 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #fa9393;
-    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f8fafc 0%, #e0c3fc 100%);
+    font-family: 'Montserrat', 'Roboto', sans-serif;
 }
+
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-top: 40px;
+}
+
 section.chat__section {
-    width: 800px;
-    max-width: 90%;
-    background: rgb(236, 206, 206);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 480px;
+    margin: 40px auto;
+    transition: box-shadow 0.3s;
 }
+
 .brand {
-    padding: 20px;
-    background: #f1f1f1;
+    padding: 24px 24px 12px 24px;
+    background: transparent;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid #ececec;
 }
+
 .brand h1 {
     text-transform: uppercase;
-    font-size: 20px;
-    color: #444;
-    margin-left: 10px;
+    font-size: 22px;
+    color: #6c63ff;
+    margin-left: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
 }
-.message__area{
-    height: 500px;
-    padding: 16px;
+
+.message__area {
+    height: 400px;
+    padding: 18px 18px 0 18px;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    padding-top: 40px;
+    background: transparent;
+    scroll-behavior: smooth;
 }
+
+.input-area {
+    display: flex;
+    align-items: center;
+    padding: 18px;
+    background: transparent;
+    border-top: 1px solid #ececec;
+}
+
 textarea {
-    width: 100%;
+    flex: 1;
     border: none;
-    padding: 20px;
+    padding: 16px 18px;
     font-size: 16px;
+    border-radius: 18px;
     outline: none;
-    background: #ecece7;
+    background: #f4f4fb;
+    resize: none;
+    font-family: 'Montserrat', sans-serif;
+    margin-right: 12px;
+    box-shadow: 0 2px 8px rgba(140, 140, 255, 0.06);
+    transition: box-shadow 0.2s;
+}
+
+textarea:focus {
+    box-shadow: 0 4px 16px rgba(140, 140, 255, 0.12);
+}
+
+.send-btn {
+    background: linear-gradient(135deg, #6c63ff 0%, #48c6ef 100%);
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(76, 110, 245, 0.12);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.send-btn:hover {
+    background: linear-gradient(135deg, #48c6ef 0%, #6c63ff 100%);
+    box-shadow: 0 4px 16px rgba(76, 110, 245, 0.18);
 }
 
 .message {
-    padding: 20px; 
-    border-radius: 4px; 
-    margin-bottom: 40px;
-    max-width: 300px;
+    padding: 18px 22px;
+    border-radius: 18px;
+    margin-bottom: 24px;
+    max-width: 70%;
     position: relative;
+    word-break: break-word;
+    font-size: 16px;
+    box-shadow: 0 2px 8px rgba(140, 140, 255, 0.08);
+    animation: fadeIn 0.4s;
 }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .incoming {
-    background: #8F8BE8;
-    color: #fff;  
+    background: linear-gradient(135deg, #8F8BE8 0%, #a8edea 100%);
+    color: #fff;
+    align-self: flex-start;
 }
+
 .outgoing {
-    background: #e9eafd;
-    color: #787986;
-    margin-left: auto;
+    background: linear-gradient(135deg, #e9eafd 0%, #f4f4fb 100%);
+    color: #6c63ff;
+    align-self: flex-end;
 }
+
 .message h4 {
     position: absolute;
-    top: -20px;
+    top: -22px;
     left: 0;
-    color: #333;
-    font-size: 14px;
+    color: #6c63ff;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+    section.chat__section {
+        max-width: 98vw;
+        margin: 8px auto;
+    }
+    .message__area {
+        height: 300px;
+        padding: 8px 4px 0 4px;
+    }
+    .input-area {
+        padding: 8px;
+    }
+    .brand {
+        padding: 12px 8px 8px 8px;
+    }
 }
